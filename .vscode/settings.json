@@ -1,0 +1,5 @@
+{
+    "cmake.ctestArgs": [
+        "--verbose"
+    ]
+}
