@@ -19,7 +19,7 @@ extern C
     } ArrayType;
 
     void gx_array_print(const void *array, unsigned int len, ArrayType type);
-    void gx_array_reverse(void *array, unsigned int len);
+    void gx_array_reverse(void *array, unsigned int len, ArrayType type);
     void gx_array_insert(void *array, unsigned int len, ArrayType type, void *data);
     void gx_array_delete_at(void *array, unsigned int len, ArrayType type, unsigned int position);
 
