@@ -30,3 +30,16 @@ void gx_array_insert(void *array, size_t len, size_t pos, void *data, size_t siz
         ((char *)array)[(pos * size) + i] = ((char *)data)[i];
     }
 }
+
+void gx_array_delete(void *array, size_t len, size_t pos, size_t size) {
+    size_t i = 0;
+
+    for (i = pos * size; i < len - 1; i++) {
+        if (len - i <= size) {
+            ((char *)array)[i] = 0;
+            continue;
+        }
+        ((char *)array)[i] = ((char *)array)[i + size];
+    }
+    ((char *)array)[len - 1] = 0;
+}

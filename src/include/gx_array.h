@@ -93,8 +93,20 @@ extern C {
      */
     extern inline void gx_array_combine(const void *ptr1, const void *ptr2, void *ptr_res, size_t len1, size_t len2);
 
+    /**
+     * @brief Insert item into the array with index position.
+     *
+     * @param array Array.
+     * @param len Length of the array in bytes.
+     * @param pos Index position item will be inserted.
+     * @param data Item that will be inserted.
+     * @param size Size of item in bytes.
+     *
+     * @note Length of the array must be enough to insert new item.
+     */
     void gx_array_insert(void *array, size_t len, size_t pos, void *data, size_t size);
-    void gx_array_delete_at(void *array, unsigned int len, ArrayType type, unsigned int position);
+
+    void gx_array_delete(void *array, size_t len, size_t pos, size_t size);
 
 #ifdef __cplusplus
 }

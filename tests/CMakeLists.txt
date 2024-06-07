@@ -24,3 +24,8 @@ add_executable(insert_array insert_array.c)
 target_link_libraries(insert_array gx_array)
 target_include_directories(insert_array PRIVATE CMAKE_SOURCE_DIR/src/include)
 add_test(INSERT_ARRAY insert_array)
+
+add_executable(delete_array delete_array.c)
+target_link_libraries(delete_array gx_array)
+target_include_directories(delete_array PRIVATE CMAKE_SOURCE_DIR/src/include)
+add_test(DELETE_ARRAY delete_array)
