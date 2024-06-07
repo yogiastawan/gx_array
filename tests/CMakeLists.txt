@@ -19,3 +19,8 @@ add_executable(combine_array combine_array.c)
 target_link_libraries(combine_array gx_array)
 target_include_directories(combine_array PRIVATE CMAKE_SOURCE_DIR/src/include)
 add_test(COMBINE_ARRAY combine_array)
+
+add_executable(insert_array insert_array.c)
+target_link_libraries(insert_array gx_array)
+target_include_directories(insert_array PRIVATE CMAKE_SOURCE_DIR/src/include)
+add_test(INSERT_ARRAY insert_array)

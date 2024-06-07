@@ -1,5 +1,5 @@
-#ifndef GX_GX_ARRAY_H
-#define GX_GX_ARRAY_H
+#ifndef __GX_ARRAY_H__
+#define __GX_ARRAY_H__
 
 #include <stdio.h>
 
@@ -79,12 +79,7 @@ extern C {
      *
      * @note Return value `0` if all items in array 1 are same as items in array 2, otherwise return `1`. Compare array of string will compare the address of the strings (items).
      */
-    extern inline unsigned char gx_array_compare(const void *ptr, const void *ptr1, size_t len) {
-        for (size_t i = 0; i < len; i++) {
-            if (((char *)ptr)[i] != ((char *)ptr1)[i]) return 1;
-        }
-        return 0;
-    }
+    extern inline unsigned char gx_array_compare(const void *ptr, const void *ptr1, size_t len);
 
     /**
      * @brief Combine two array into new array result;
@@ -96,23 +91,13 @@ extern C {
      *
      * @note Length of the array result must be >= `len1` + `len2`
      */
-    extern inline void gx_array_combine(const void *ptr1, const void *ptr2, void *ptr_res, size_t len1, size_t len2) {
-        size_t max = len1 > len2 ? len1 : len2;
-        for (size_t i = 0; i < max; i++) {
-            if (i < len1) {
-                ((char *)ptr_res)[i] = ((char *)ptr1)[i];
-            }
+    extern inline void gx_array_combine(const void *ptr1, const void *ptr2, void *ptr_res, size_t len1, size_t len2);
 
-            if (i < len2) {
-                ((char *)ptr_res)[i + len1] = ((char *)ptr2)[i];
-            }
-        }
-    }
-    void gx_array_insert(void *array, unsigned int len, ArrayType type, void *data);
+    void gx_array_insert(void *array, size_t len, size_t pos, void *data, size_t size);
     void gx_array_delete_at(void *array, unsigned int len, ArrayType type, unsigned int position);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* GX_GX_ARRAY_H */
+#endif /* __GX_ARRAY_H__ */
